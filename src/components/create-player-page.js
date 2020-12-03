@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Button, Grid, Snackbar } from '@material-ui/core';
 import { CreatePlayer } from './player';
+import './common/common-page.css';
 
 const createPlayerStructure = (id) => { return { id: id, name: "", score: 5 } }
 
@@ -47,10 +48,14 @@ export default function CreatePlayerPage() {
       {playerList}
       <Grid container justify="space-around">
         <Grid item>
-          <Button variant="contained" onClick={() => addPlayer()}>Añadir jugador</Button>
+          <div className="button-outer-margin">
+            <Button variant="contained" onClick={() => addPlayer()}>Añadir jugador</Button>
+          </div>
         </Grid>
         <Grid item>
-          <Button variant="contained" color="primary" onClick={() => savePlayers()}>Guardar</Button>
+          <div className="button-outer-margin">
+            <Button variant="contained" color="primary" onClick={() => savePlayers()}>Guardar</Button>
+          </div>
         </Grid>
       </Grid>
       <Snackbar
